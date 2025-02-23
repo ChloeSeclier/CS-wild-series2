@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -7,7 +8,10 @@ function App() {
 
       <nav>nav</nav>
 
-      <main>Welcome to Wild Series</main>
+      <main>
+        Welcome to Wild Series
+        <Link to="/programs">PROGRAM</Link>
+      </main>
 
       <footer>footer</footer>
     </>
