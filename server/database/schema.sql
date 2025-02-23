@@ -11,6 +11,11 @@ create table item (
   foreign key(user_id) references user(id)
 );
 
+create table category(
+  id int unsigned primary key auto_increment not null,
+  name varchar(100) not null,
+)
+
 insert into user(id, email, password)
 values
   (1, "jdoe@mail.com", "123456");
