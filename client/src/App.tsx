@@ -9,7 +9,7 @@ function App() {
       <nav>nav</nav>
 
       <main>
-        Welcome to Wild Series
+        <h1>Welcome to Wild Series</h1>
         <Link to="/programs">PROGRAM</Link>
       </main>
 

@@ -21,18 +21,14 @@ export default function Programs() {
 
   return (
     <>
-      <p>coucou</p>
       {program.length > 0 ? (
         <>
-          <ul>
-            {" "}
-            Mon programme
-            {program.map((item) => (
-              <li key={item.id}>
-                {item.title} - {item.country}
-              </li>
-            ))}
-          </ul>
+          <h1>Mon programme</h1>
+          {program.map((item) => (
+            <li key={item.id}>
+              {item.title} - {item.country}
+            </li>
+          ))}
         </>
       ) : (
         <p>Chargement...⏳</p>
