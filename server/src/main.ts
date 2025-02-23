@@ -20,3 +20,12 @@ app
   .on("error", (err: Error) => {
     console.error("Error:", err.message);
   });
+
+import type { RequestHandler } from "express";
+
+const sayWelcome: RequestHandler = (req, res) => {
+  res.send("Hello series");
+};
+app.get("/", sayWelcome);
+
+// export{sayWelcome}
