@@ -4,14 +4,18 @@ import "./App.css";
 function App() {
   return (
     <>
-      <header>header</header>
+      <nav className="navbar">
+        <div className="navbar1">
+          <h1>Welcome to Wild Series</h1>
+        </div>
 
-      <nav>nav</nav>
+        <div className="navbar2">
+          <Link to="/programs">Séries</Link>
+          <Link to="/categories">Catégories</Link>
+        </div>
+      </nav>
 
-      <main>
-        <h1>Welcome to Wild Series</h1>
-        <Link to="/programs">PROGRAM</Link>
-      </main>
+      <main>...main...</main>
 
       <footer>footer</footer>
     </>

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
+import CategoryDeleteForm from "./CategoryDeleteForm";
+
 type Program = {
   id: number;
   title: string;
@@ -30,7 +32,7 @@ export default function CategoryDetails() {
         <hgroup className="details-hgroup">
           <h1>{category.name}</h1>
           <Link to={`/categories/${category.id}/edit`}>Modifier</Link>
-          {/* <CategoryDeleteForm id={category.id}>Supprimer</CategoryDeleteForm> */}
+          <CategoryDeleteForm id={category.id}>Supprimer</CategoryDeleteForm>
         </hgroup>
         <ul>
           {category.programs.map((program) => (
