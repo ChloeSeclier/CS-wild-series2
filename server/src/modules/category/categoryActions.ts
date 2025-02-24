@@ -26,14 +26,18 @@ const browse: RequestHandler = async (req, res, next) => {
   }
 };
 
-const read: RequestHandler = (req, res) => {
-  const parseId = Number.parseInt(req.params.id);
-  const category = categories.find((c) => c.id === parseId);
+const read: RequestHandler = (req, res, next) => {
+  try {
+    const categoryId = Number.parseInt(req.params.id);
+    const category = categories.find((c) => c.id === categoryId);
 
-  if (category != null) {
-    res.json(category);
-  } else {
-    res.json(404);
+    if (category != null) {
+      res.json(category);
+    } else {
+      res.json(404);
+    }
+  } catch (err) {
+    next(err);
   }
 };
 
