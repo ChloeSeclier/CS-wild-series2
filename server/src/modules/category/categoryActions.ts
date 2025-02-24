@@ -41,4 +41,50 @@ const read: RequestHandler = (req, res, next) => {
   }
 };
 
-export default { browse, read };
+const edit: RequestHandler = async (req, res, next) => {
+  try {
+    const category = {
+      id: Number(req.params.id),
+      name: req.body.name,
+    };
+    const affectedRows = await categoryRepository.update(category);
+
+    if (affectedRows === 0) {
+      res.sendStatus(404);
+    } else {
+      res.sendStatus(204);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
+const add: RequestHandler = async (req, res, next) => {
+  try {
+    // Extract the category data from the request body
+    const newCategory = {
+      name: req.body.name,
+    };
+
+    // Create the category
+    const insertId = await categoryRepository.create(newCategory);
+
+    // Respond with HTTP 201 (Created) and the ID of the newly inserted item
+    res.status(201).json({ insertId });
+  } catch (err) {
+    // Pass any errors to the error-handling middleware
+    next(err);
+  }
+};
+
+const destroy: RequestHandler = async (req, res, next) => {
+  try {
+    const categoryId = Number(req.params.id);
+    await categoryRepository.delete(categoryId);
+    res.sendStatus(204);
+  } catch (err) {
+    next(err);
+  }
+};
+
+export default { browse, read, edit, add };

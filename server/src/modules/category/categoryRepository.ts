@@ -15,6 +15,7 @@ class CategoryRepository {
     // Return the array of categories
     return rows as Category[];
   }
+
   async read(id: number) {
     const [rows] = await databaseClient.query<Rows>(
       `SELECT category.*,
@@ -28,6 +29,34 @@ class CategoryRepository {
 
     //Return first row
     return rows[0] as Category;
+  }
+
+  async update(category: Category) {
+    const [result] = await databaseClient.query<Result>(
+      "UPDATE category SET name = ? WHERE id =?",
+      [category.name, category.id],
+    );
+
+    return result.affectedRows;
+  }
+
+  async create(category: Omit<Category, "id">) {
+    const [result] = await databaseClient.query<Result>(
+      "INSERT INTO category (name) VALUES (?)",
+      [category.name],
+    );
+
+    return result.insertId;
+  }
+
+  async delete(id: number) {
+    const [result] = await databaseClient.query<Result>(
+      "DELETE FROM category WHERE id = ?",
+      [id],
+    );
+
+    // Return how many rows were affected
+    return result.affectedRows;
   }
 }
 
