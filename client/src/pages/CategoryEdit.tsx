@@ -1,6 +1,6 @@
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import CategoryForm from "../components/CategoryForm";
-import { useEffect, useState } from "react";
 
 type Category = {
   id: number;

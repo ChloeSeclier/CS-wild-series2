@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -6,7 +6,9 @@ function App() {
     <>
       <nav className="navbar">
         <div className="navbar1">
-          <h1>Welcome to Wild Series</h1>
+          <Link to="/">
+            <h1>Wild Series</h1>
+          </Link>
         </div>
 
         <div className="navbar2">
@@ -15,7 +17,9 @@ function App() {
         </div>
       </nav>
 
-      <main>...main...</main>
+      <main>
+        <Outlet />
+      </main>
 
       <footer>footer</footer>
     </>

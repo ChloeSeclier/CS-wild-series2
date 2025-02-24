@@ -15,7 +15,7 @@ export default function CategoryIndex() {
       .then((data: Category[]) => {
         setCategories(data);
       });
-  });
+  }, []);
 
   return (
     <>
@@ -30,3 +30,5 @@ export default function CategoryIndex() {
     </>
   );
 }
+
+
