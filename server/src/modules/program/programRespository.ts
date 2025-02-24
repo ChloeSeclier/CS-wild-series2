@@ -6,9 +6,9 @@ type Program = {
   id: number;
   title: string;
   synopsis: string;
-  oster:string;
-  country:string;
-  year:number;
+  poster: string;
+  country: string;
+  year: number;
 };
 
 class ProgramRepository {
