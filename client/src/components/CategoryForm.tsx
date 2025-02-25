@@ -25,18 +25,20 @@ function CategoryForm({ children, defaultValue, onSubmit }: CategoryFormProps) {
         });
       }}
     >
-      <div className="InputContainer">
-        <input
-          placeholder="Nouvelle catégorie"
-          id="input"
-          className="input"
-          type="text"
-          name="name"
-          defaultValue={defaultValue.name}
-        />
-      </div>
+      <div className="container-form">
+        <div className="InputContainer">
+          <input
+            placeholder="Nouvelle catégorie"
+            id="input"
+            className="input"
+            type="text"
+            name="name"
+            defaultValue={defaultValue.name}
+          />
+        </div>
 
-      <button type="submit">{children}</button>
+        <button type="submit">{children}</button>
+      </div>
     </form>
   );
 }

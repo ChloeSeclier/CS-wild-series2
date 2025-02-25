@@ -1,10 +1,16 @@
 .button-add a {
   border: solid 2px #41101f;
+  background-color: #ebd9e7;
   border-radius: 0.5rem;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   padding: 0.5rem;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+a {
+  color: #41101f;
 }
 
 .button-add:hover a {
@@ -12,79 +18,69 @@
   color: #f9f3f3;
 }
 
-/* --------------button-------------------- */
+/* ---------------Container formulaire button + input-------------- */
+.container-form {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+/* --------------------Button-------------------- */
+/* From Uiverse.io by satyamchaudharydev */
+
 button {
+  font-family: "Sofia Sans Extra Condensed", serif;
+  letter-spacing: 0.1rem;
+  padding: 0;
+  margin: 0;
   border: none;
-  background: transparent;
-}
-/* From Uiverse.io by Wendell47 */
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px 15px;
-  border: 0;
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.5rem;
-  transition: all 0.02s;
+  background: none;
   cursor: pointer;
-  color: #41101f;
-  z-index: 0;
-  box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
-.button:hover {
-  background: #f9f3f3;
-  color: #41101f;
-}
-
-.button:active {
-  transform: scale(0.97);
-}
-
-.hoverEffect {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
+button {
+  --primary-color: #41101f;
+  --hovered-color: #ab8686;
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  z-index: 1;
 }
 
-.hoverEffect div {
-  background: #41101f;
-  background: linear-gradient(
-    90deg,
-    rgb(215, 153, 207) 0%,
-    rgba(191, 70, 255, 1) 49%,
-    rgb(142, 228, 226) 100%
-  );
-  border-radius: 0.5rem;
-  width: 10rem;
-  height: 10rem;
-  transition: 0.4s;
-  filter: blur(20px);
-  animation: effect infinite 3s linear;
-  opacity: 0.5;
+button p {
+  margin: 0;
+  position: relative;
+  color: var(--primary-color);
 }
 
-.button:hover .hoverEffect div {
-  width: 8rem;
-  height: 8rem;
+button::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: 10px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
 }
 
-@keyframes effect {
-  0% {
-    transform: rotate(0deg);
-  }
+button p::before {
+  position: absolute;
+  content: "Ajouter";
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
 
-  100% {
-    transform: rotate(360deg);
-  }
+button:hover::after {
+  width: 100%;
+}
+
+button:hover p::before {
+  width: 100%;
 }
 
 /* --------------------Input-------------------- */

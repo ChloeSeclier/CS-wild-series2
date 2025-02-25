@@ -26,12 +26,7 @@ export default function CategoryNew() {
           });
       }}
     >
-      <button type="button" className="button">
-        Ajouter
-        <div className="hoverEffect">
-          <div>d</div>
-        </div>
-      </button>
+      <p>Ajouter</p>
     </CategoryForm>
   );
 }
