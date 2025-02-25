@@ -11,10 +11,10 @@ import CategoryDetail from "./pages/CategoryDetail";
 import CategoryEdit from "./pages/CategoryEdit";
 import CategoryIndex from "./pages/CategoryIndex";
 import CategoryNew from "./pages/CategoryNew";
+import ProgramDetail from "./pages/ProgramDetail";
+import ProgramEdit from "./pages/ProgramEdit";
 import ProgramIndex from "./pages/ProgramIndex";
-// import ProgramNew from "./pages/ProgramNew";
-// import ProgramDetail from "./pages/ProgramDetail";
-// import ProgramEdit from "./pages/ProgramEdit";
+import ProgramNew from "./pages/ProgramNew";
 
 // import About from "./pages/About";
 // import Contact from "./pages/Contact";
@@ -49,18 +49,18 @@ const router = createBrowserRouter([
         path: "/programs",
         element: <ProgramIndex />,
       },
-      // {
-      //   path: "/programs/new",
-      //   element: <ProgramNew />,
-      // },
-      // {
-      //   path: "/programs/:id",
-      //   element: <ProgramDetail />,
-      // },
-      // {
-      //   path: "/programs/:id/edit",
-      //   element: <ProgramEdit />,
-      // },
+      {
+        path: "/programs/new",
+        element: <ProgramNew />,
+      },
+      {
+        path: "/programs/:id",
+        element: <ProgramDetail />,
+      },
+      {
+        path: "/programs/:id/edit",
+        element: <ProgramEdit />,
+      },
     ],
   },
 ]);
