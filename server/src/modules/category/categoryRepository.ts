@@ -18,13 +18,8 @@ class CategoryRepository {
 
   async read(id: number) {
     const [rows] = await databaseClient.query<Rows>(
-      `SELECT category.*,
-    JSON_ARRAYAGG(JSON_OBJECT("id", program.id, "title", program.title) )as programs
-    FROM category
-    LEFT JOIN program on program.category_id = category.id
-    WHERE category.id= ?
-    GROUP BY category.id
-    `[id],
+      "select * from category where id = ?",
+      [id],
     );
 
     //Return first row

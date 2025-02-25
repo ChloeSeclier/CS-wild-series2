@@ -7,7 +7,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
-import CategoryDetails from "./pages/CategoryDetails";
+import CategoryDetail from "./pages/CategoryDetail";
 import CategoryEdit from "./pages/CategoryEdit";
 import CategoryIndex from "./pages/CategoryIndex";
 import CategoryNew from "./pages/CategoryNew";
@@ -30,20 +30,23 @@ const router = createBrowserRouter([
 
     // Try adding a new route! For example, "/about" with an About component
     children: [
-      { path: "/programs", element: <Programs /> },
-      { path: "/categories", element: <CategoryIndex /> },
+      {
+        path: "/categories",
+        element: <CategoryIndex />,
+      },
       {
         path: "/categories/new",
         element: <CategoryNew />,
       },
       {
         path: "/categories/:id",
-        element: <CategoryDetails />,
+        element: <CategoryDetail />,
       },
       {
         path: "/categories/:id/edit",
         element: <CategoryEdit />,
       },
+      { path: "/programs", element: <Programs /> },
     ],
   },
 ]);
