@@ -14,6 +14,7 @@ type Program = {
 class ProgramRepository {
   async readAll() {
     const [rows] = await databaseClient.query<Rows>("select * from program");
+
     return rows as Program[];
   }
 
@@ -22,6 +23,7 @@ class ProgramRepository {
       "SELECT * FROM program WHERE id = ?",
       [id],
     );
+
     return rows[0] as Program;
   }
 
@@ -30,6 +32,7 @@ class ProgramRepository {
       "UPDATE program SET title = ? WHERE id = ?",
       [program.title, program.id],
     );
+
     return result.affectedRows;
   }
 
@@ -53,6 +56,7 @@ class ProgramRepository {
       "DELETE FROM program WHERE id=?",
       [id],
     );
+
     return result.affectedRows;
   }
 }
