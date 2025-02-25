@@ -1,10 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import CategoryForm from "../components/CategoryForm";
+import "./pages.css";
 
 export default function CategoryNew() {
   const navigate = useNavigate();
 
-  const newCategory = { name: "" };
+  const newCategory = {
+    name: "",
+  };
 
   return (
     <CategoryForm

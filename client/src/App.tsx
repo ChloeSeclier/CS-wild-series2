@@ -17,7 +17,7 @@ function App() {
         </div>
       </nav>
 
-      <main>
+      <main className="main-content">
         <Outlet />
       </main>
 

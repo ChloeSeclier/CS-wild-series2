@@ -3,18 +3,12 @@ import { Link, useParams } from "react-router-dom";
 
 import CategoryDeleteForm from "./CategoryDeleteForm";
 
-type Program = {
-  id: number;
-  title: string;
-};
-
 type Category = {
   id: number;
   name: string;
-  programs: Program[];
 };
 
-export default function CategoryDetails() {
+export default function CategoryDetail() {
   const { id } = useParams();
   const [category, setCategory] = useState(null as null | Category);
 
@@ -29,18 +23,9 @@ export default function CategoryDetails() {
   return (
     category && (
       <>
-        <hgroup className="details-hgroup">
-          <h1>{category.name}</h1>
-          <Link to={`/categories/${category.id}/edit`}>Modifier</Link>
-          <CategoryDeleteForm id={category.id}>Supprimer</CategoryDeleteForm>
-        </hgroup>
-        <ul>
-          {category.programs.map((program) => (
-            <li key={program.id}>
-              <Link to={`/programs/${program.id}`}>{program.title}</Link>
-            </li>
-          ))}
-        </ul>
+        <h1>{category.name}</h1>
+        <Link to={`/categories/${category.id}/edit`}>Modifier</Link>
+        <CategoryDeleteForm id={category.id}>Supprimer</CategoryDeleteForm>
       </>
     )
   );

@@ -19,7 +19,9 @@ export default function CategoryIndex() {
 
   return (
     <>
-      <Link to={"/categories/new"}>Ajouter</Link>
+      <div className="button-add">
+        <Link to={"/categories/new"}>Ajouter une nouvelle catégorie ✨</Link>
+      </div>
       <ul>
         {categories.map((category) => (
           <li key={category.id}>
@@ -30,5 +32,3 @@ export default function CategoryIndex() {
     </>
   );
 }
-
-

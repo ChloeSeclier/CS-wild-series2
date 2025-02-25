@@ -9,8 +9,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import CategoryDetails from "./pages/CategoryDetails";
 import CategoryEdit from "./pages/CategoryEdit";
+import CategoryIndex from "./pages/CategoryIndex";
 import CategoryNew from "./pages/CategoryNew";
-import CategoryIndex from "./pages/categoryIndex";
 import Programs from "./pages/programs";
 
 // Import additional components for new routes
