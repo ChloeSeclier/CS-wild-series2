@@ -27,8 +27,18 @@ export default function ProgramDetail() {
   return (
     program && (
       <>
-        <h1>{program.title}</h1>
-        <Link to={`/categories/${program.id}/edit`}>Modifier</Link>
+        <div className="container-detail">
+          <div className="container-detail-1">
+            <img src={program.poster} alt="poster" />
+          </div>
+          <div className="container-detail-2">
+            <h1>{program.title}</h1>
+            <p>{program.synopsis}</p>
+            <p>{program.country}</p>
+            <p>{program.year}</p>
+          </div>
+        </div>
+        <Link to={`/programs/${program.id}/edit`}>Modifier</Link>
         <ProgramDeleteForm id={program.id}>Supprimer</ProgramDeleteForm>
       </>
     )

@@ -13,10 +13,10 @@ const browse: RequestHandler = async (req, res, next) => {
   }
 };
 
-const read: RequestHandler = (req, res, next) => {
+const read: RequestHandler = async (req, res, next) => {
   try {
-    const programId = Number.parseInt(req.params.id);
-    const program = programRespository.read(programId);
+    const programId = Number(req.params.id);
+    const program = await programRespository.read(programId);
 
     if (program != null) {
       res.json(program);

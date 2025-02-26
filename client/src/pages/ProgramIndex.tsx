@@ -26,10 +26,10 @@ export default function ProgramIndex() {
 
   return (
     <>
-      <p>Liste des séries</p>
       {/* <div className="button-add">
         <Link to={"/programs/new"}>Ajouter une nouvelle série</Link>
       </div> */}
+      <h1>Liste des séries</h1>
       <ul>
         {programs.map((program) => (
           <li key={program.id}>

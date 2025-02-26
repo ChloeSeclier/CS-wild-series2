@@ -109,3 +109,16 @@ button:hover p::before {
   padding-left: 15px;
   letter-spacing: 0.8px;
 }
+
+/*---------------------Display detail ------------------------------*/
+.container-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 2rem;
+  justify-items: center;
+  align-items: center;
+
+  .container-detail-1 img {
+    height: 50dvh;
+  }
+}
