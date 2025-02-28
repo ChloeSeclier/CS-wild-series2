@@ -4,6 +4,23 @@ import categoryRepository from "./categoryRepository";
 // Declare the actions
 import type { RequestHandler } from "express";
 
+import joi from "joi";
+
+const categorySchema = joi.object({
+  id: joi.number().integer().positive().required(),
+  name: joi.string().max(100).required(),
+});
+
+const validate: RequestHandler = (req, res, next) => {
+  const { error } = categorySchema.validate(req.body, { abortEarly: false });
+
+  if (error == null) {
+    next();
+  } else {
+    res.status(400).json({ validationErrors: error.details });
+  }
+};
+
 const browse: RequestHandler = async (req, res, next) => {
   try {
     // Fetch all categories
@@ -80,4 +97,4 @@ const destroy: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { browse, read, edit, add, destroy };
+export default { browse, read, edit, add, destroy, validate };

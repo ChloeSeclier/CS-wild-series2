@@ -4,6 +4,28 @@ import programRespository from "./programRespository";
 
 import type { RequestHandler } from "express";
 
+import joi from "joi";
+
+const programSchema = joi.object({
+  id: joi.number().integer().positive().required(),
+  title: joi.string().max(255).required(),
+  synopsis: joi.string().required(),
+  poster: joi.string().uri().required(),
+  country: joi.string().max(100).required(),
+  year: joi.number().integer().positive().required(),
+  category_id: joi.number().integer().positive().required(),
+});
+
+const validate: RequestHandler = (req, res, next) => {
+  const { error } = programSchema.validate(req.body, { abortEarly: false });
+
+  if (error == null) {
+    next();
+  } else {
+    res.status(400).json({ validationErrors: error.details });
+  }
+};
+
 const browse: RequestHandler = async (req, res, next) => {
   try {
     const programs = await programRespository.readAll();
@@ -76,4 +98,4 @@ const destroy: RequestHandler = async (req, res, next) => {
 };
 
 // Export it
-export default { browse, read, edit, add, destroy };
+export default { browse, read, edit, add, destroy, validate };
