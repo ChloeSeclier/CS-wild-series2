@@ -29,14 +29,30 @@ export default function ProgramIndex() {
       <div className="button-add">
         <Link to={"/programs/new"}>Ajouter une nouvelle série 🎬</Link>
       </div>
-      <h1>Liste des séries</h1>
-      <ul>
+      <h1>Vos séries</h1>
+      <ul className="program-index">
         {programs.map((program) => (
-          <li key={program.id}>
-            <Link to={`/programs/${program.id}`}>
-              {program.title} - {program.country} - {program.synopsis}
-            </Link>
-          </li>
+          <div className="container-li" key={program.id}>
+            <li className="box-li">
+              <Link
+                to={`/programs/${program.id}`}
+                title="Cliquez pour voir plus"
+              >
+                <span />
+                <span />
+                <span />
+                <span />
+
+                <h3>{program.title}</h3>
+                <p>
+                  <b className="underline">Origine :</b> {program.country}
+                </p>
+                <p>
+                  <b className="underline">Année :</b> {program.year}
+                </p>
+              </Link>
+            </li>
+          </div>
         ))}
       </ul>
     </>

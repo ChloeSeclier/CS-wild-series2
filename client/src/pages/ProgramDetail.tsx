@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
+import ButtonRetour from "../components/ButtonRetour";
 import ProgramDeleteForm from "./ProgramDeleteForm";
 
 type Program = {
@@ -27,6 +28,7 @@ export default function ProgramDetail() {
   return (
     program && (
       <>
+        <ButtonRetour />
         <div className="container-detail">
           <div className="container-detail-1">
             <img src={program.poster} alt="poster" />
@@ -38,8 +40,10 @@ export default function ProgramDetail() {
             <p>{program.year}</p>
           </div>
         </div>
-        <Link to={`/programs/${program.id}/edit`}>Modifier</Link>
-        <ProgramDeleteForm id={program.id}>Supprimer</ProgramDeleteForm>
+        <div className="selection-choix">
+          <Link to={`/programs/${program.id}/edit`}>Modifier ✏️</Link>
+          <ProgramDeleteForm id={program.id}>Supprimer ❌</ProgramDeleteForm>
+        </div>
       </>
     )
   );

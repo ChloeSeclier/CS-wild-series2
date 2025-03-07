@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
+import ButtonRetour from "../components/ButtonRetour";
 import CategoryDeleteForm from "./CategoryDeleteForm";
 
 type Category = {
@@ -23,9 +24,13 @@ export default function CategoryDetail() {
   return (
     category && (
       <>
-        <h1>{category.name}</h1>
-        <Link to={`/categories/${category.id}/edit`}>Modifier</Link>
-        <CategoryDeleteForm id={category.id}>Supprimer</CategoryDeleteForm>
+        <ButtonRetour />
+        <h1 className="selection-h1">Catégorie sélectionnée : </h1>
+        <h2 className="selection">{category.name}</h2>
+        <div className="selection-choix">
+          <Link to={`/categories/${category.id}/edit`}>Modifier ✏️</Link>
+          <CategoryDeleteForm id={category.id}>Supprimer ❌</CategoryDeleteForm>
+        </div>
       </>
     )
   );

@@ -29,6 +29,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding-inline: 1%;
+  height: 8vh;
   /* margin: 0; */
 
   .navbar1,
@@ -38,6 +39,7 @@ body {
     background-color: #41101f;
     color: #f9f3f3;
     letter-spacing: 0.3rem;
+    margin: 0;
   }
 
   .navbar2 {
@@ -80,6 +82,6 @@ footer {
   p {
     color: #f9f3f3;
     text-align: center;
-    /* padding: 0; */
+    margin: 0.5%;
   }
 }

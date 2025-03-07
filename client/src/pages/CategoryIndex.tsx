@@ -19,16 +19,17 @@ export default function CategoryIndex() {
 
   return (
     <>
-      <div className="button-add">
-        <Link to={"/categories/new"}>Ajouter une nouvelle catégorie ✨</Link>
-      </div>
+      <h1>Les catégories</h1>
       <ul>
         {categories.map((category) => (
           <li key={category.id}>
-            <Link to={`/categories/${category.id}`}>{category.name}</Link>
+            <Link to={`/categories/${category.id}`}>✏️ {category.name}</Link>
           </li>
         ))}
       </ul>
+      <div className="button-add">
+        <Link to={"/categories/new"}>Ajouter une nouvelle catégorie ✨</Link>
+      </div>
     </>
   );
 }

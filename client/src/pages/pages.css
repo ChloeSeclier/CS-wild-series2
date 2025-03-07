@@ -127,8 +127,139 @@ button:hover p::before {
 .home {
   text-align: center;
   margin: 2%;
-
+  .link-detail {
+    border-bottom: solid 3px #41101f;
+  }
   img {
     width: 80%;
   }
+}
+
+/*-------------------Page program index----------------*/
+.program-index {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/*------------ animation carré---------------*/
+.container-li {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: transparent;
+}
+
+.box-li {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  box-shadow: 5px 10px 15px #ab8686;
+  border: solid 1px #ab8686;
+  padding: 2%;
+
+  h3 {
+    margin: 0;
+    text-align: center;
+  }
+  p {
+    margin: 1%;
+
+    .underline {
+      border-bottom: solid 1px #c09ab5;
+      font-weight: 300;
+      font-size: 1.2rem;
+    }
+  }
+}
+.box-li span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+.box-li span:nth-child(1) {
+  transform: rotate(0deg);
+}
+
+.box-li span:nth-child(2) {
+  transform: rotate(90deg);
+}
+
+.box-li span:nth-child(3) {
+  transform: rotate(180deg);
+}
+
+.box-li span:nth-child(4) {
+  transform: rotate(270deg);
+}
+
+.box-li span:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #ff007f;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  50.1% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+/*-------bouton retour------------*/
+.bouton-retour {
+  align-self: flex-start;
+  margin-inline: 1%;
+  border-bottom: solid 4px #ab8686;
+  p {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+}
+.bouton-retour:hover {
+  border-bottom: solid 4px #41101f;
+  color: #ab8686;
+}
+
+/*-----------page detail modif/suppr----------*/
+.selection-h1 {
+  margin-bottom: 0;
+}
+.selection {
+  border: solid 1px #e1bdc8;
+  background-color: #41101f;
+  color: #f9f3f3;
+  padding: 1% 8% 1% 8%;
+  border-radius: 10em;
+}
+.selection-choix a:hover {
+  color: #c09ab5;
 }
