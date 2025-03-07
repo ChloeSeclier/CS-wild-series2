@@ -11,24 +11,24 @@ import CategoryDetail from "./pages/CategoryDetail";
 import CategoryEdit from "./pages/CategoryEdit";
 import CategoryIndex from "./pages/CategoryIndex";
 import CategoryNew from "./pages/CategoryNew";
+import Home from "./pages/Home";
 import ProgramDetail from "./pages/ProgramDetail";
 import ProgramEdit from "./pages/ProgramEdit";
 import ProgramIndex from "./pages/ProgramIndex";
 import ProgramNew from "./pages/ProgramNew";
-
-// import About from "./pages/About";
-// import Contact from "./pages/Contact";
 
 /* ************************************************************************* */
 
 // Create router configuration with routes
 const router = createBrowserRouter([
   {
-    path: "/", // The root path
-    element: <App />, // Renders the App component for the home page
+    element: <App />,
 
-    // Try adding a new route! For example, "/about" with an About component
     children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
       {
         path: "/categories",
         element: <CategoryIndex />,

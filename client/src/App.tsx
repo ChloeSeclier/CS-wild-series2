@@ -21,7 +21,12 @@ function App() {
         <Outlet />
       </main>
 
-      <footer>footer</footer>
+      <footer>
+        <p>
+          &copy; 2025.03 - fait par <b>Chloé Seclier</b> avec la Wild Code
+          School
+        </p>
+      </footer>
     </>
   );
 }

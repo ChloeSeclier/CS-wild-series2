@@ -122,3 +122,13 @@ button:hover p::before {
     height: 50dvh;
   }
 }
+
+/*------------------------Page home --------------------------*/
+.home {
+  text-align: center;
+  margin: 2%;
+
+  img {
+    width: 80%;
+  }
+}
