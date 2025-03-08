@@ -126,12 +126,15 @@ button:hover p::before {
 /*------------------------Page home --------------------------*/
 .home {
   text-align: center;
-  margin: 2%;
+  margin: 0 2% 0 2%;
+  h1 {
+    margin: 0;
+  }
   .link-detail {
     border-bottom: solid 3px #41101f;
   }
   img {
-    width: 80%;
+    width: 40%;
   }
 }
 
