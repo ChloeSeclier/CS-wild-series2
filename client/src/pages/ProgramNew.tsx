@@ -7,6 +7,11 @@ export default function ProgramNew() {
 
   const newProgram = {
     title: "",
+    synopsis: "",
+    poster: "",
+    country: "",
+    year: 0,
+    category_id: 0,
   };
 
   return (
@@ -20,9 +25,18 @@ export default function ProgramNew() {
           },
           body: JSON.stringify(programData),
         })
-          .then((response) => response.json())
-          .then((data) => {
-            navigate(`/programs/${data.insertId}`);
+          .then((response) => {
+            if (!response.ok) {
+              // Si la réponse n'est pas ok, on génère une erreur
+              throw new Error(`Erreur HTTP ${response.status}`);
+            }
+            return response.json(); // Si ok, on parse le JSON
+          })
+          .then(() => {
+            navigate("/programs");
+          })
+          .catch((error) => {
+            console.error("Erreur lors de la requête :", error); // Affiche l'erreur si la requête échoue
           });
       }}
     >

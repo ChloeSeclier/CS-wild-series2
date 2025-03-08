@@ -11,6 +11,7 @@ type Program = {
   poster: string;
   country: string;
   year: number;
+  category_id: number;
 };
 
 export default function ProgramDetail() {

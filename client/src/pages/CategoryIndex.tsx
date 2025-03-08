@@ -23,7 +23,9 @@ export default function CategoryIndex() {
       <ul>
         {categories.map((category) => (
           <li key={category.id}>
-            <Link to={`/categories/${category.id}`}>✏️ {category.name}</Link>
+            <Link to={`/categories/${category.id}`} title="Modifier">
+              ✏️ {category.name}
+            </Link>
           </li>
         ))}
       </ul>

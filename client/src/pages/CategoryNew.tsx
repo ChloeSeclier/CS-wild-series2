@@ -21,8 +21,8 @@ export default function CategoryNew() {
           body: JSON.stringify(categoryData),
         })
           .then((response) => response.json())
-          .then((data) => {
-            navigate(`/categories/${data.insertId}`);
+          .then(() => {
+            navigate("/categories");
           });
       }}
     >

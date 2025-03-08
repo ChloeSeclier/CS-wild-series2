@@ -38,7 +38,7 @@ export default function CategoryEdit() {
             },
           ).then((response) => {
             if (response.status === 204) {
-              navigate(`/categories/${category.id}`);
+              navigate("/categories");
             }
           });
         }}

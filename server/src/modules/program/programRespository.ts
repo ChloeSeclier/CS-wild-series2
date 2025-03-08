@@ -9,6 +9,7 @@ type Program = {
   poster: string;
   country: string;
   year: number;
+  category_id: number;
 };
 
 class ProgramRepository {
@@ -38,13 +39,14 @@ class ProgramRepository {
 
   async create(program: Omit<Program, "id">) {
     const [result] = await databaseClient.query<Result>(
-      "INSERT INTO program (titlte) VALUES (?)",
+      "INSERT INTO program (title, synopsis, poster, country, year, category_id) VALUES (?, ?, ?, ?, ?,?)",
       [
         program.title,
         program.synopsis,
         program.poster,
         program.country,
         program.year,
+        program.category_id,
       ],
     );
 

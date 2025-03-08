@@ -7,7 +7,7 @@ import type { RequestHandler } from "express";
 import joi from "joi";
 
 const categorySchema = joi.object({
-  id: joi.number().integer().positive().required(),
+  id: joi.number().integer().positive(),
   name: joi.string().max(100).required(),
 });
 

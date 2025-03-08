@@ -3,6 +3,11 @@ import ButtonRetour from "./ButtonRetour";
 
 type ProgramData = {
   title: string;
+  synopsis: string;
+  poster: string;
+  country: string;
+  year: number;
+  category_id: number;
 };
 
 interface ProgramFormProps {
@@ -26,21 +31,76 @@ export default function ProgramForm({
           const formData = new FormData(event.currentTarget);
 
           const title = formData.get("title") as string;
+          const synopsis = formData.get("synopsis") as string;
+          const poster = formData.get("poster") as string;
+          const country = formData.get("country") as string;
+          const year = formData.get("year") as string;
+          const category_id = formData.get("category_id") as string;
 
           onSubmit({
             title,
+            synopsis,
+            poster,
+            country,
+            year: Number.parseInt(year),
+            category_id: Number.parseInt(category_id),
           });
         }}
       >
         <div className="container-form">
           <div className="InputContainer">
             <input
-              placeholder="Nouvelle série"
+              placeholder="Titre de la série"
               id="input"
               className="input"
               type="text"
-              name="name"
+              name="title"
               defaultValue={defaultValue.title}
+            />
+          </div>
+          <div className="InputContainer">
+            <input
+              placeholder="Synopsis"
+              id="synopsis"
+              className="input"
+              type="text"
+              name="synopsis"
+            />
+          </div>
+          <div className="InputContainer">
+            <input
+              placeholder="Poster (URL)"
+              id="poster"
+              className="input"
+              type="text"
+              name="poster"
+            />
+          </div>
+          <div className="InputContainer">
+            <input
+              placeholder="Pays"
+              id="country"
+              className="input"
+              type="text"
+              name="country"
+            />
+          </div>
+          <div className="InputContainer">
+            <input
+              placeholder="Année"
+              id="year"
+              className="input"
+              type="number"
+              name="year"
+            />
+          </div>
+          <div className="InputContainer">
+            <input
+              placeholder="ID de la catégorie"
+              id="category_id"
+              className="input"
+              type="number"
+              name="category_id"
             />
           </div>
 
