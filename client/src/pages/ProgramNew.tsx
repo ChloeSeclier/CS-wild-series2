@@ -8,7 +8,8 @@ export default function ProgramNew() {
   const newProgram = {
     title: "",
     synopsis: "",
-    poster: "",
+    poster:
+      "https://img.freepik.com/vecteurs-premium/vecteur-icone-image-par-defaut-page-image-manquante-pour-conception-site-web-application-mobile-aucune-photo-disponible_87543-11093.jpg",
     country: "",
     year: 0,
     category_id: 0,

@@ -72,27 +72,6 @@ const edit: RequestHandler = async (req, res, next) => {
   }
 };
 
-// const add: RequestHandler = async (req, res, next) => {
-//   try {
-//     const newProgram = {
-//       title: req.body.title,
-//       synopsis: req.body.synopsis,
-//       poster: req.body.poster,
-//       country: req.body.country,
-//       year: Number(req.body.year),
-//     };
-
-//     console.log("Données reçues:", req.body);
-
-//     const insertId = await programRespository.create(newProgram);
-//     res.status(201).json({ insertId });
-
-//   } catch (err) {
-//     console.error("Erreur serveur :", err);
-//     next(err);
-//   }
-// };
-
 const add: RequestHandler = async (req, res, next) => {
   try {
     const newProgram = {

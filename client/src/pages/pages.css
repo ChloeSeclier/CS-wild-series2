@@ -21,11 +21,13 @@ a {
 /* ---------------Container formulaire button + input-------------- */
 .container-form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 1rem;
 }
 
-/* --------------------Button-------------------- */
+/* --------------------Button ajouter-------------------- */
 /* From Uiverse.io by satyamchaudharydev */
 
 button {
@@ -38,9 +40,11 @@ button {
   cursor: pointer;
   font-size: 1.2rem;
   font-weight: 600;
+  position: relative;
+  display: inline-block;
 }
 
-button {
+.button-ajouter {
   --primary-color: #41101f;
   --hovered-color: #ab8686;
   position: relative;
@@ -48,24 +52,24 @@ button {
   align-items: center;
 }
 
-button p {
+.button-ajouter p {
   margin: 0;
   position: relative;
   color: var(--primary-color);
 }
 
-button::after {
+.button-ajouter::after {
   position: absolute;
   content: "";
   width: 0;
   left: 0;
-  bottom: 10px;
+  bottom: 0;
   background: var(--hovered-color);
   height: 2px;
   transition: 0.3s ease-out;
 }
 
-button p::before {
+.button-ajouter p::before {
   position: absolute;
   content: "Ajouter";
   width: 0%;
@@ -75,11 +79,11 @@ button p::before {
   transition: 0.3s ease-out;
 }
 
-button:hover::after {
+.button-ajouter:hover::after {
   width: 100%;
 }
 
-button:hover p::before {
+.button-ajouter:hover p::before {
   width: 100%;
 }
 
