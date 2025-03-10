@@ -18,7 +18,6 @@ export default function ProgramEdit() {
 
   const { id } = useParams();
   const [program, setProgram] = useState(null as null | Program);
-
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/programs/${id}`)
       .then((response) => response.json())

@@ -7,7 +7,6 @@ import type { RequestHandler } from "express";
 import joi from "joi";
 
 const programSchema = joi.object({
-  id: joi.number().integer().positive(),
   title: joi.string().max(255).required(),
   synopsis: joi.string(),
   poster: joi.string().uri(),
@@ -49,6 +48,7 @@ const read: RequestHandler = async (req, res, next) => {
     next(err);
   }
 };
+
 const edit: RequestHandler = async (req, res, next) => {
   try {
     const program = {
@@ -57,9 +57,10 @@ const edit: RequestHandler = async (req, res, next) => {
       synopsis: req.body.synopsis,
       poster: req.body.poster,
       country: req.body.country,
-      year: Number(req.params.year),
-      category_id: Number(req.params.category_id),
+      year: Number(req.body.year),
+      category_id: Number(req.body.category_id),
     };
+
     const affectedRows = await programRespository.update(program);
 
     if (affectedRows === 0) {

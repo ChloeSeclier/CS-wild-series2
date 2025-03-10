@@ -36,9 +36,18 @@ export default function ProgramDetail() {
           </div>
           <div className="container-detail-2">
             <h1>{program.title}</h1>
+            <p>
+              <b className="underline">Synopsis :</b>{" "}
+            </p>
             <p>{program.synopsis}</p>
-            <p>{program.country}</p>
-            <p>{program.year}</p>
+            <p>
+              <b className="underline">Origine :</b>
+            </p>
+            <p> {program.country}</p>
+            <p>
+              <b className="underline">Année :</b>
+            </p>
+            <p> {program.year}</p>
           </div>
         </div>
         <div className="selection-choix">

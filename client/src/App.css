@@ -30,13 +30,11 @@ body {
   align-items: center;
   padding-inline: 1%;
   height: 8vh;
-  /* margin: 0; */
 
   .navbar1,
   h1 {
     font-family: "Orbitron", serif;
     font-weight: bold;
-    background-color: #41101f;
     color: #f9f3f3;
     letter-spacing: 0.3rem;
     margin: 0;
@@ -48,11 +46,9 @@ body {
     flex-direction: row;
     justify-content: right;
     gap: 10%;
-    background-color: #41101f;
     min-width: 30%;
 
     a {
-      background-color: #41101f;
       color: #f9f3f3;
       font-family: "Orbitron", serif;
       font-weight: 200;
@@ -78,10 +74,28 @@ body {
 
 footer {
   background-color: #41101f;
-  /* height: 10%; */
   p {
     color: #f9f3f3;
     text-align: center;
     margin: 0.5%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .navbar {
+    .navbar1,
+    h1 {
+      font-size: 1rem;
+      margin-left: 2%;
+    }
+    .navbar2 {
+      position: absolute;
+      right: 0;
+      margin-right: 2%;
+      a {
+        font-size: 0.8rem;
+        right: 0;
+      }
+    }
   }
 }

@@ -30,8 +30,16 @@ class ProgramRepository {
 
   async update(program: Program) {
     const [result] = await databaseClient.query<Result>(
-      "UPDATE program SET title = ? WHERE id = ?",
-      [program.title, program.id],
+      "UPDATE program SET title = ?, synopsis = ?, poster = ?, country = ?, year = ?, category_id = ? WHERE id = ?",
+      [
+        program.title,
+        program.synopsis,
+        program.poster,
+        program.country,
+        program.year,
+        program.category_id,
+        program.id,
+      ],
     );
 
     return result.affectedRows;

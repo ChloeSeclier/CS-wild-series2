@@ -66,7 +66,7 @@ export default function ProgramForm({
           <div className="InputContainer">
             <input
               placeholder="Synopsis"
-              id="synopsis"
+              id="input"
               className="input"
               type="text"
               name="synopsis"
@@ -76,7 +76,7 @@ export default function ProgramForm({
           <div className="InputContainer">
             <input
               placeholder="Image URL"
-              id="poster"
+              id="input"
               className="input"
               type="text"
               name="poster"
@@ -86,7 +86,7 @@ export default function ProgramForm({
           <div className="InputContainer">
             <input
               placeholder="Pays"
-              id="country"
+              id="input"
               className="input"
               type="text"
               name="country"
@@ -96,7 +96,7 @@ export default function ProgramForm({
           <div className="InputContainer">
             <input
               placeholder="Année"
-              id="year"
+              id="input"
               className="input"
               type="number"
               name="year"
@@ -106,7 +106,7 @@ export default function ProgramForm({
           <div className="InputContainer">
             <input
               placeholder="ID de la catégorie"
-              id="category_id"
+              id="input"
               className="input"
               type="number"
               name="category_id"
